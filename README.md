@@ -1,4 +1,4 @@
-# EstruturasDadosEstatica
+# Estrutura de Dados
 Exercício com Tipos Genéricos, Tipos Abstratos de Dados, Listas Estáticas, Pilhas e Filas. 
 
 Método 1:  
