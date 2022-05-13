@@ -22,6 +22,7 @@ Por exemplo, as expressões “((A+B)” e “A+B(” violam a regra (1) e as ex
 O método recebe como parâmetro uma pilha que contém os caracteres da expressão matemática e retorna verdadeiro, se os parênteses da expressão estão agrupados de forma correta, ou falso, caso contrário. Uma pilha armazena apenas uma única expressão. Utilize o método equals para a comparação dos objetos. As expressões estão armazenadas na pilha da direta para a esquerda, ou seja, os caracteres da direita são empilhados primeiro. 
 
 #Algoritimos - Árvores e Ordenação
+
 **Realizado estudo de árvores binárias, Binary Search Tree e AVL (Balanceamento)**
 
 De acordo com o que foi estudado sobre Árvores AVL, você deve implementar uma Árvore AVL com as operações de inserção, exclusão e busca.
