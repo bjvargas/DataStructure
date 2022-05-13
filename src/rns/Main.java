@@ -3,16 +3,72 @@ package rns;
 import rns.help.tree.AVL;
 import rns.help.Metodo2;
 import rns.help.StaticStack;
+import rns.help.tree.Node;
+
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+import static rns.constants.Operations.DELETE;
+import static rns.constants.Operations.END;
+import static rns.constants.Operations.INSERT;
+import static rns.constants.Operations.SEARCH;
 
 public class Main {
+	static Scanner view = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
 		AVL avl = new AVL();
+		String run = "GO";
+		System.out.println("Por favor, insira o primeiro número, a raíz da árvore.");
+		avl.getNodes().add(new Node(getInteger(), null, null, null));
 
+		while(!run.equals(END)) {
 
+			System.out.println("Por favor, informe qual operação deseja realizar: ");
+			System.out.println(INSERT);
+			System.out.println(DELETE);
+			System.out.println(SEARCH);
+			System.out.println(END + " para encerrar o programa.");
+			run = view.next();
+			switch (run.toUpperCase()) {
+				case INSERT:
+					messageOne(run);
+					avl.insert(view.nextInt());
+					break;
+				case DELETE:
+					messageOne(run);
+					avl.delete(view.nextInt());
+					break;
+				case SEARCH:
+					messageOne(run);
+					avl.search(view.nextInt());
+					break;
+				case END:
+					run = END;
+					break;
+				default:
+					System.out.println("Por favor escolha uma das opções acima");
+			}
+		}
+	}
+
+	private static void messageOne(String run){
+		System.out.println("Qual número (nó) deseja " + run + "?");
+	}
+	private static Integer getInteger() {
+		while (true) {
+			try {
+				return view.nextInt();
+			} catch (InputMismatchException e) {
+				view.nextLine();
+				System.out.println("Valor digitado não é um número inteiro, digite outro valor: ");
+			}
+		}
 
 	}
+
 
 //	public static void main(String[] args) {
 //
