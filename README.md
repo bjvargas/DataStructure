@@ -33,3 +33,6 @@ Você não precisa colocar os dados que os nós da árvore indexam, cada nó pod
 As entradas do programa devem ser realizadas via teclado (ou seja, solicite ao usuário que digite a operação desejada e o valor a ser inserido). Por exemplo: “insert 10” pode ser uma forma de indicar a inserção da chave 10 na árvore
 A saída do programa também pode ser realizada com impressões, desde que seja possível ver o estado da árvore ao final de cada operação. Você pode utilizar o formato de impressão que preferir
 A cada operação de rotação realizada, imprima na tela a operação realizada e o motivo (ou seja, qual chave estava desbalanceada)
+
+![image](https://user-images.githubusercontent.com/70863493/169676775-c90c74b7-d772-42a5-8752-2b133d0df2bc.png)
+
