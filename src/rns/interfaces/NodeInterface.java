@@ -4,24 +4,26 @@ import rns.tree.Node;
 
 public interface NodeInterface {
 
-    public Node insert(Node root, Integer info);
+    Node insert(Node root, Integer info);
 
-    public Node rotate(Node parent, String position);
+    Node rotate(Node parent, String position);
 
-    public Integer height(Node root);
+    Integer height(Node root);
 
-    public Integer bigger(Integer a, Integer b);
+    Integer bigger(Integer a, Integer b);
 
-    public void organize(Node root);
+    void organize(Node root);
 
-    public void reOrganize(Node root);
+    void reOrganize(Node root);
 
-    public Node newNode(Node root, Integer info);
+    Node newNode(Node root, Integer info);
 
-    public Node delete(Node root, Integer info);
+    Node delete(Node root, Integer info);
 
-    public Node minValueNode(Node node);
+    Node minValueNode(Node node);
 
-    public int getBalance(Node node);
+    int getBalance(Node node);
+
+    boolean search(Node root, Integer info);
 
 }

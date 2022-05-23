@@ -199,14 +199,15 @@ public class NodeService implements NodeInterface {
         return height(node.getLeft()) - height(node.getRight());
     }
 
-//    private boolean search(AVLTreeNode root, T data) {
-//        if(root == null) return false;
-//        if(root.data.compareTo(data) == 0) return true;
-//        else if(root.data.compareTo(data) > 0)
-//            return search(root.leftChild,data);
-//        else
-//            return search(root.rightChild,data);
-//    }
+    @Override
+    public boolean search(Node root, Integer info) {
+        if(root == null) return false;
+        if(root.getInfo().compareTo(info) == 0) return true;
+        else if(root.getInfo().compareTo(info) > 0)
+            return search(root.getLeft(), info);
+        else
+            return search(root.getRight(), info);
+    }
 
     public String toTreeString(String prefix, boolean top, String tree, Node node) {
         Node left;

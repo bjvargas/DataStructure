@@ -16,7 +16,6 @@ import static rns.constants.Operations.SEARCH;
 public class Main {
 	static Scanner view = new Scanner(System.in);
 
-
 	private static NodeService nodeService = new NodeService();
 
 	public static void main(String[] args) {
@@ -46,7 +45,8 @@ public class Main {
 					break;
 				case SEARCH:
 					messageOne(run);
-					//nodeService.search(view.nextInt());
+					existValue(root, view.nextInt());
+					print(root);
 					break;
 				case END:
 					run = END;
@@ -55,8 +55,16 @@ public class Main {
 					System.out.println("Por favor escolha uma das opções acima");
 			}
 		}
+		view.close();
 	}
 
+	private static void existValue(Node root, Integer value){
+		if(nodeService.search(root, value)){
+			System.out.println("Valor encontrado!");
+		} else {
+			System.out.println("Valor " + value + " não encontrado.");
+		}
+	}
 	private static void print(Node node) {
 		nodeService.organize(node);
 		System.out.println();
@@ -65,7 +73,6 @@ public class Main {
 		System.out.println("---------");
 
 		System.out.println((nodeService.toTreeString("", true, "", node)));
-		System.out.println("Está balanceado?  " + nodeService.isBalanced(node));
 	}
 
 	private static void messageOne(String run){
