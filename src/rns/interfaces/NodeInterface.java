@@ -12,10 +12,6 @@ public interface NodeInterface {
 
     Integer bigger(Integer a, Integer b);
 
-    void organize(Node root);
-
-    void reOrganize(Node root);
-
     Node newNode(Node root, Integer info);
 
     Node delete(Node root, Integer info);

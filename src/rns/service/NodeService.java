@@ -16,44 +16,35 @@ public class NodeService implements NodeInterface {
         if (root == null) {
             return newNode(null, info);
         }
-        //if root's data is greater than data then
-        //create a node left side
+
         if (root.getInfo() > info) {
             root.setLeft(insert(root.getLeft(), info));
-        }
-        //if root's data is greater than data then
-        //create a node on right side
-        else if (root.getInfo() < info) {
+        } else if (root.getInfo() < info) {
             root.setRight(insert(root.getRight(), info));
-        } else {
-            //update the height of node
-            root.setHeight(1 + bigger(height(root.getRight()), height(root.getLeft())));
         }
-        //get the balance factor of the node
-        //bf = hl - hr
+
+        root.setHeight(1 + bigger(height(root.getRight()), height(root.getLeft())));
+
+
         int balanceFactor = height(root.getLeft()) - height(root.getRight());
 
-        //Now we have four cases
-
-        //left left - rightRotate
         if (balanceFactor > 1 && info < root.getLeft().getInfo()) {
             return rotate(root, "r");
         }
 
-        //right right - leftRotate
         if (balanceFactor < -1 && info > root.getRight().getInfo()) {
             return rotate(root, "left");
         }
 
-        //left right - leftRotate followed by rightRotate
         if (balanceFactor > 1 && info > root.getLeft().getInfo()) {
+            System.out.println("2 - LEFT - rotate");
 
             root.setLeft(rotate(root.getLeft(), "left"));
             return rotate(root, "r");
         }
 
-        //right left - rightRotate followed by leftRotate
         if (balanceFactor < -1 && info < root.getRight().getInfo()) {
+            System.out.println("2 - RIGHT - rotate");
 
             root.setRight(rotate(root.getRight(), "r"));
             return rotate(root, "left");
@@ -103,24 +94,6 @@ public class NodeService implements NodeInterface {
         return ((a > b) ? a : b);
     }
 
-    @Override
-    public void organize(Node root) {
-        if (root == null)
-            return;
-        organize(root.getLeft());
-        System.out.print(root.getInfo() + "->");
-        organize(root.getRight());
-    }
-
-    @Override
-    public void reOrganize(Node root) {
-        if (root == null)
-            return;
-        System.out.print(root.getInfo() + "->");
-        reOrganize(root.getLeft());
-        reOrganize(root.getRight());
-    }
-
 
     @Override
     public Node delete(Node root, Integer info) {
@@ -135,15 +108,12 @@ public class NodeService implements NodeInterface {
         } else {
             if ((root.getLeft() == null) || (root.getRight() == null)) {
                 Node temp = null;
-                if (null == root.getLeft())
+                if (null == root.getLeft()) {
                     temp = root.getRight();
-                else
+                } else {
                     temp = root.getLeft();
-
-                if (temp == null) {
-                    root = null;
-                } else
-                    root = temp;
+                }
+                root = temp;
             } else {
                 Node temp = minValueNode(root.getRight());
 
@@ -180,9 +150,8 @@ public class NodeService implements NodeInterface {
         return root;
     }
 
-   @Override
-   public Node minValueNode(Node node)
-    {
+    @Override
+    public Node minValueNode(Node node) {
         Node current = node;
 
         while (current.getLeft() != null)
@@ -192,8 +161,7 @@ public class NodeService implements NodeInterface {
     }
 
     @Override
-    public int getBalance(Node node)
-    {
+    public int getBalance(Node node) {
         if (node == null)
             return 0;
         return height(node.getLeft()) - height(node.getRight());
@@ -201,9 +169,9 @@ public class NodeService implements NodeInterface {
 
     @Override
     public boolean search(Node root, Integer info) {
-        if(root == null) return false;
-        if(root.getInfo().compareTo(info) == 0) return true;
-        else if(root.getInfo().compareTo(info) > 0)
+        if (root == null) return false;
+        if (root.getInfo().compareTo(info) == 0) return true;
+        else if (root.getInfo().compareTo(info) > 0)
             return search(root.getLeft(), info);
         else
             return search(root.getRight(), info);
@@ -257,7 +225,6 @@ public class NodeService implements NodeInterface {
         if (node == null)
             return 0;
 
-        // Get heights of subtrees
         int h1 = isBalanced(node.getLeft());
         int h2 = isBalanced(node.getRight());
 
