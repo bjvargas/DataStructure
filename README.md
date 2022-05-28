@@ -1,4 +1,8 @@
 # Estrutura de Dados
+
+![image](https://user-images.githubusercontent.com/70863493/169678248-204263ab-c031-4ed3-b803-5e32b92d2999.png)
+
+
 Exercício com Tipos Genéricos, Tipos Abstratos de Dados, Listas Estáticas, Pilhas e Filas. 
 
 Método 1:  
@@ -36,6 +40,5 @@ A cada operação de rotação realizada, imprima na tela a operação realizada
 
 ![image](https://user-images.githubusercontent.com/70863493/169676775-c90c74b7-d772-42a5-8752-2b133d0df2bc.png)
 
-![image](https://user-images.githubusercontent.com/70863493/169678248-204263ab-c031-4ed3-b803-5e32b92d2999.png)
 
 
