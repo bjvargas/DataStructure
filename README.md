@@ -1,4 +1,4 @@
-# Estrutura de Dados
+# Data Structure
 
 ![image](https://user-images.githubusercontent.com/70863493/169678248-204263ab-c031-4ed3-b803-5e32b92d2999.png)
 
